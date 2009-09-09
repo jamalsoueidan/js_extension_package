@@ -1,13 +1,23 @@
 JsExtensionPackage
 ==================
 
-Introduction goes here.
+Includes the following tools
 
+js_navigation_extension (Navigation helpers builds navigation bar)
+
+
+I included one class inside my js_extension_package, I used allot to make small helpers extension for my views.
+block_helpers => http://github.com/markevans/block_helpers/tree/master
 
 Example
 =======
 
-Example goes here.
+js_navigation_extension
+
+<% navigation(:class => "login") do |n| %>
+	<%= n.l("Signup", :action => "signup") %>
+	<%= n.l("Forgot Password", :action => "forgot_password") %>
+<% end %>
 
 
 Copyright (c) 2009 [name of plugin creator], released under the MIT license
