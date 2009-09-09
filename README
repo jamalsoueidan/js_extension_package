@@ -3,7 +3,9 @@ JsExtensionPackage
 
 Includes the following tools
 
-js_navigation_extension (Navigation helpers builds navigation bar)
+js_navigation_helpers (Navigation helpers builds navigation bar)
+js_custom_helpers (Include some custom helpers)
+
 
 
 I included one class inside my js_extension_package, I used allot to make small helpers extension for my views.
@@ -14,10 +16,27 @@ Example
 
 js_navigation_extension
 
+Code:
 <% navigation(:class => "login") do |n| %>
 	<%= n.l("Signup", :action => "signup") %>
 	<%= n.l("Forgot Password", :action => "forgot_password") %>
 <% end %>
+
+Result:
+<ul class="login">
+	<li><a href="/user/signup">Signup</a></li>
+	<li><a href="/user/forgot_password">Forgot Password</a></li>
+</ul>
+
+js_custom_helpers
+
+Code:
+<%= flash_messages %>
+
+Result (depends on which flash hash is not blank):
+<div class="flash flash-error">...message..</div>
+
+
 
 
 Copyright (c) 2009 [name of plugin creator], released under the MIT license
