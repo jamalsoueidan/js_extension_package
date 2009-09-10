@@ -17,6 +17,10 @@ module CustomHelpers
     return nil
   end
   
+  def tt(text)
+    t("actioncontroller." + text)
+  end
+  
   def link_back(text = nil)
     if text.nil?
       text = "Back"
