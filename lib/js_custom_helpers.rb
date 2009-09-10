@@ -16,6 +16,14 @@ module CustomHelpers
     end
     return nil
   end
+  
+  def link_back(text = nil)
+    if text.nil?
+      text = "Back"
+    end
+    
+    link_to(text, :back)
+  end
 end
 
 ActionView::Base.send(:include, CustomHelpers)
