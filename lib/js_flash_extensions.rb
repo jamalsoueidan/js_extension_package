@@ -3,12 +3,15 @@ module JsFlashExtension
   def flash_and_redirect(options={})
     if options[:error]
       et(options[:error])
+      options[:error] = nil
     end
     if options[:success]
       st(options[:success])
+      options[:success] = nil
     end
     if options[:notice]
       nt(options[:notice])
+      options[:notice] = nil
     end
     
     redirect_to options
