@@ -45,5 +45,11 @@ Code:
 Result:
 <a href=""javascript:history.go(-1)">Back</a>
 
+Code:
+<%= link_popup('Terms of service', :action => "terms") %>
+
+Result:
+<a href="/user/terms" onclick="window.open(this.href,'new_window_name','height=300,width=600,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes');return false;">Terms of service</a>
+
 
 Copyright (c) 2009 [name of plugin creator], released under the MIT license
