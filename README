@@ -5,10 +5,10 @@ Includes the following tools
 
 js_navigation_helpers (Navigation helpers builds navigation bar)
 js_custom_helpers (Include some custom helpers)
+js_flash_extension (For translation and assigning flash error, notice and success.)
 
 
-
-I included one class inside my js_extension_package, I used allot to make small helpers extension for my views.
+I included one plugin inside my plugin, I used allot to make small helpers extension for my views.
 block_helpers => http://github.com/markevans/block_helpers/tree/master
 
 Example
@@ -51,5 +51,10 @@ Code:
 Result:
 <a href="/user/terms" onclick="window.open(this.href,'new_window_name','height=300,width=600,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes');return false;">Terms of service</a>
 
+
+js_flash_extension
+==================
+
+Coming..
 
 Copyright (c) 2009 [name of plugin creator], released under the MIT license
