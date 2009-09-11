@@ -17,8 +17,8 @@ module CustomHelpers
     return nil
   end
   
-  def tt(text)
-    t("actioncontroller." + text)
+  def tt(text, options={})
+    t("actioncontroller." + text, options)
   end
   
   def link_back(text = nil)
