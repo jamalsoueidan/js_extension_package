@@ -1,16 +1,16 @@
-# JsExtensionPackage
-module ExtendControllers
-  def post?
-    request.post?
-  end
-  
-  def get?
-    requrest.get?
-  end
+root = File.dirname(__FILE__)
+actions_path = root + "/actions"
+helpers_path = root + "/helpers"
 
-  def tt(text, options={})
-    t("actioncontroller." + text, options)
-  end
+actions = [:flash, :request, :translate]
+helpers = [:flash, :link, :navigation]
+
+actions.each do |action|
+  require actions_path + "/js_" + action.to_s + "_actions"
 end
 
-ActionController::Base.send(:include, ExtendControllers)
+helpers.each do |helper|
+  require helpers_path + "/js_" + helper.to_s + "_helpers"
+end
+
+require 'block_helpers'
