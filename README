@@ -3,58 +3,25 @@ JsExtensionPackage
 
 Includes the following tools
 
-js_navigation_helpers (Navigation helpers builds navigation bar)
-js_custom_helpers (Include some custom helpers)
-js_flash_extension (For translation and assigning flash error, notice and success.)
+Actions:
+--------
+js_flash_actions
+js_request_actions
+js_translate_actions
+
+Helpers:
+--------
+js_flash_helpers
+js_link_helpers
+js_navigation_helpers
 
 
-I included one plugin inside my plugin, I used allot to make small helpers extension for my views.
+I also included one plugin inside my plugin, which I use allot to make small helpers extension for my views.
 block_helpers => http://github.com/markevans/block_helpers/tree/master
 
 Example
 =======
 
-js_navigation_extension
-=======================
-
-Code:
-<% navigation(:class => "login") do |n| %>
-	<%= n.l("Signup", :action => "signup") %>
-	<%= n.l("Forgot Password", :action => "forgot_password") %>
-<% end %>
-
-Result:
-<ul class="login">
-	<li><a href="/user/signup">Signup</a></li>
-	<li><a href="/user/forgot_password">Forgot Password</a></li>
-</ul>
 
 
-js_custom_helpers
-=================
-
-Code:
-<%= flash_messages %>
-
-Result: (depends on which flash hash is not blank):
-<div class="flash flash-error">...message..</div>
-
-Code:
-<%= link_back %>
-
-Result:
-<a href=""javascript:history.go(-1)">Back</a>
-
-Code:
-<%= link_popup('Terms of service', :action => "terms") %>
-
-Result:
-<a href="/user/terms" onclick="window.open(this.href,'new_window_name','height=300,width=600,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes');return false;">Terms of service</a>
-
-
-js_flash_extension
-==================
-
-Coming..
-
-Copyright (c) 2009 [name of plugin creator], released under the MIT license
+Copyright (c) 2009 Jamal Soueidan, released under the MIT license
