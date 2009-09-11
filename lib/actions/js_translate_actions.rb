@@ -1,5 +1,5 @@
 module JsTranslateActions
-  def self.included?(instance)
+  def self.included(instance)
     instance.helper_method :tt
   end
   

@@ -1,1 +1,1 @@
-#require 'js_extension_package'
+require 'js_extension_package'

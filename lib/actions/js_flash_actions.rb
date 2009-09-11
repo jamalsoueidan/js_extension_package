@@ -1,23 +1,15 @@
-module JsFlash
-  
-  def self.included?(instance)
-    instance.alias_method :eft, :error_flash_translate
-    instance.alias_method :sft, :succes_flash_translate
-    instance.alias_method :nft, :notice_flash_translate
-    instance.alias_method :ft, :flash_translate
-  end
-  
+module JsFlashActions
   def flash_and_redirect(options={})
     if options[:error]
-      et(options[:error])
+      error_flash_translate(options[:error])
       options[:error] = nil
     end
     if options[:success]
-      st(options[:success])
+      success_flash_translate(options[:success])
       options[:success] = nil
     end
     if options[:notice]
-      nt(options[:notice])
+      notice_flash_translate(options[:notice])
       options[:notice] = nil
     end
     
@@ -41,4 +33,4 @@ module JsFlash
   end
 end
 
-ActionController::Base.send(:include, JsFlash)
+ActionController::Base.send(:include, JsFlashActions)

@@ -1,4 +1,4 @@
-module JsFlashHelper
+module JsFlashHelpers
   def flash_messages
     content = flash_option(:success)
     if content.nil?
@@ -18,4 +18,4 @@ module JsFlashHelper
   end
 end
 
-ActionView::Base.send(:include, JsFlashHelper)
+ActionView::Base.send(:include, JsFlashHelpers)
