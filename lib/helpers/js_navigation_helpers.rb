@@ -8,7 +8,12 @@ class Navigation < BlockHelpers::Base
   end
 
   def link(text, options={})
-    content_tag(:li, link_to_unless_current(text, options))
+    class_css = {}
+    if current_page?(options)
+      class_css[:class] = 'selected'
+    end
+    
+    content_tag(:li, link_to_unless_current(text, options), class_css)
   end
   
   
