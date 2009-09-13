@@ -1,10 +1,17 @@
 class Navigation < BlockHelpers::Base
-  def initialize(options={})
-    @options = options
+  def initialize(*args)
+    @options = args.extract_options!
+    if args[0].to_s != ""
+      @tag = args[0].to_s
+    end
   end
       
   def display(body)
-    content_tag(:ul, body, @options)
+    if @tag.nil?
+      content_tag(:ul, body, @options)
+    else
+      content_tag(@tag, content_tag(:ul, body), @options)
+    end
   end
 
   def link(text, options={})
