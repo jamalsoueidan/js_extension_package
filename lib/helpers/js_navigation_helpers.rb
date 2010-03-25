@@ -1,4 +1,5 @@
 class Navigation < BlockHelpers::Base
+  
   def initialize(*args)
     @options = args.extract_options!
     if args[0].to_s != ""
@@ -18,6 +19,8 @@ class Navigation < BlockHelpers::Base
     class_css = {}
     if current_page?(options)
       class_css[:class] = 'selected'
+    else
+      class_css[:class] = 'unselected'
     end
     
     content_tag(:li, link_to_unless_current(text, options), class_css)
