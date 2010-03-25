@@ -13,7 +13,11 @@ module JsFlashActions
       options[:notice] = nil
     end
     
-    redirect_to options
+    if options[:url]
+      redirect_to options[:url]
+    else
+      redirect_to options
+    end
   end
   
   def error_flash_translate(text, options={})
